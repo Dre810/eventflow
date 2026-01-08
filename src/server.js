@@ -9,6 +9,8 @@ const { testConnection } = require('./config/database');
 const authRoutes = require('./routes/authRoutes');
 const eventRoutes = require('./routes/eventRoutes');
 
+const bookingRoutes = require('./routes/bookingRoutes');
+
 const app = express();
 
 // Middleware
@@ -34,8 +36,9 @@ app.use(async (req, res, next) => {
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);
+app.use('/api/bookings', bookingRoutes);
 
-// Basic route
+// Update the home route endpoints
 app.get('/', (req, res) => {
     res.json({ 
         message: 'EventFlow API is running!',
@@ -58,11 +61,19 @@ app.get('/', (req, res) => {
                 featured: 'GET /api/events/featured',
                 upcoming: 'GET /api/events/upcoming',
                 categories: 'GET /api/events/categories'
+            },
+            bookings: {
+                create: 'POST /api/bookings',
+                my_bookings: 'GET /api/bookings/my-bookings',
+                get_booking: 'GET /api/bookings/:id',
+                cancel: 'POST /api/bookings/:id/cancel',
+                payment_intent: 'POST /api/bookings/:id/payment-intent',
+                confirm_payment: 'POST /api/bookings/:id/confirm-payment',
+                stats: 'GET /api/bookings/stats'
             }
         }
     });
 });
-
 
 // 404 handler
 app.use((req, res) => {
