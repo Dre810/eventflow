@@ -1,76 +1,20 @@
+/* App.css - Keep it minimal */
 .App {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-/* React Query DevTools customization */
-.__react-query-devtools {
-  position: fixed !important;
-  bottom: 10px !important;
-  right: 10px !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+/* Loading spinner */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #1976d2;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
 }
 
-/* Toast customization */
-.Toastify__toast {
-  border-radius: 8px !important;
-  font-family: 'Inter', sans-serif !important;
-}
-
-.Toastify__toast--success {
-  background-color: #22c55e !important;
-}
-
-.Toastify__toast--error {
-  background-color: #ef4444 !important;
-}
-
-.Toastify__toast--warning {
-  background-color: #f59e0b !important;
-}
-
-.Toastify__toast--info {
-  background-color: #0ea5e9 !important;
-}
-
-/* React Date Picker customization */
-.react-datepicker {
-  font-family: 'Inter', sans-serif !important;
-  border-radius: 8px !important;
-  border-color: #e5e7eb !important;
-}
-
-.react-datepicker__header {
-  background-color: #f8fafc !important;
-  border-bottom: 1px solid #e5e7eb !important;
-  border-radius: 8px 8px 0 0 !important;
-}
-
-.react-datepicker__day--selected {
-  background-color: #0ea5e9 !important;
-  border-radius: 4px !important;
-}
-
-.react-datepicker__day--keyboard-selected {
-  background-color: #7dd3fc !important;
-  border-radius: 4px !important;
-}
-
-/* Stripe Elements customization */
-.StripeElement {
-  @apply form-input;
-}
-
-.StripeElement--focus {
-  @apply ring-2 ring-primary-500 border-transparent;
-}
-
-.StripeElement--invalid {
-  @apply border-danger-300;
-}
-
-.StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
