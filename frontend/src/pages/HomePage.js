@@ -176,4 +176,128 @@ const HomePage = () => {
         }
         
         .search-input {
-          flex: 1
+          flex: 1;
+          border: none;
+          padding: 15px 20px;
+          font-size: 16px;
+          outline: none;
+        }
+        
+        .search-button {
+          background: #4361ee;
+          color: white;
+          border: none;
+          padding: 15px 40px;
+          border-radius: 50px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        
+        .search-button:hover {
+          background: #3a56d4;
+          transform: translateY(-2px);
+        }
+        
+        .hero-stats {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+          margin-top: 40px;
+        }
+        
+        @media (min-width: 768px) {
+          .hero-stats {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+        
+        .stat {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          background: rgba(255,255,255,0.1);
+          padding: 20px;
+          border-radius: 16px;
+          backdrop-filter: blur(10px);
+        }
+        
+        .stat svg {
+          font-size: 24px;
+          color: #4cc9f0;
+        }
+        
+        .stat h4 {
+          font-size: 24px;
+          margin-bottom: 5px;
+        }
+        
+        .stat p {
+          font-size: 14px;
+          opacity: 0.8;
+        }
+        
+        .section {
+          padding: 60px 0;
+        }
+        
+        .section-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 40px;
+        }
+        
+        .section-header h2 {
+          font-size: 32px;
+          font-weight: 700;
+        }
+        
+        .bg-light {
+          background: #f8f9fa;
+        }
+        
+        .categories-grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          justify-content: center;
+        }
+        
+        .category-chip {
+          padding: 12px 24px;
+          border: 2px solid #e9ecef;
+          border-radius: 50px;
+          background: white;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        
+        .category-chip:hover {
+          border-color: #4361ee;
+          color: #4361ee;
+        }
+        
+        .category-chip.active {
+          background: #4361ee;
+          color: white;
+          border-color: #4361ee;
+        }
+        
+        .cta-section {
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          border-radius: 40px;
+          margin: 60px 0;
+        }
+        
+        .cta-section h2 {
+          font-size: 36px;
+          margin-bottom: 16px;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default HomePage;
